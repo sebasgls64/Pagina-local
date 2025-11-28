@@ -4,6 +4,8 @@ import os
 
 app = Flask(__name__)
 
+app.secret_key = "clave-super-secreta"
+
 # --- Cargar o crear un archivo para almacenar usuarios ---
 if not os.path.exists("users.json"):
     with open("users.json", "w") as f:
