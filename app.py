@@ -44,6 +44,7 @@ def login():
 
     return render_template("login.html")
 
+
 # --- Crear usuario ---
 @app.route("/register", methods=["GET", "POST"])
 def register():
