@@ -1,129 +1,194 @@
-/* Fondo degradado suave */
-body {
+/* ===== GENERAL ===== */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes gradientBG {
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #dbaac7, #727cb4);
+    background-size: 400% 400%;  /* 🔥 necesario para que la animación funcione */
+    animation: moverFondo 12s ease infinite; /* 🔥 animación agregada */
+
+    overflow: hidden;
+}
+
+/* 🔥 ANIMACIÓN DEL FONDO */
+@keyframes moverFondo {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Contenedor estilo glassmorphism */
+/* ===== AVATAR ===== */
+.avatar {
+    width: 90px;
+    height: 90px;
+    background: rgba(17, 28, 67, 0.95);
+    border-radius: 50%;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.avatar span {
+    font-size: 42px;
+    color: white;
+}
+
+/* ===== TARJETA DE LOGIN ===== */
 .login-container {
     width: 350px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.18);
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.20); /* 🔥 transparencia suave */
+    backdrop-filter: blur(12px); /* 🔥 efecto glass */
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(12px);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+
     text-align: center;
+    position: relative;
 }
 
-/* Avatar redondo arriba */
+/* ===== AVATAR ===== */
 .avatar {
-    width: 80px;
-    height: 80px;
-    margin: -70px auto 10px auto;
-    background: rgba(255, 255, 255, 0.25);
+    width: 90px;
+    height: 90px;
+    background: rgba(25, 35, 70, 0.9);
     border-radius: 50%;
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 35px;
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    justify-content: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
-.icon-user {
+.avatar i,
+.avatar span {
     font-size: 40px;
+    color: white;
 }
 
-/* Inputs con iconos */
+/* ===== TÍTULO ===== */
+h2 {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #0d1b2a;
+    font-weight: bold;
+}
+
+/* ===== INPUT BOXES ===== */
 .input-box {
     position: relative;
-    margin: 20px 0;
-}
-
-.input-box input {
     width: 100%;
-    padding: 12px 40px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    background: rgba(255, 255, 255, 0.2);
-    font-size: 16px;
-    color: #fff;
-    backdrop-filter: blur(6px);
+    height: 38px; /* tamaño tipo referencia */
+    margin: 15px 0;
 }
 
 .input-box .icon {
     position: absolute;
-    left: 12px;
-    top: 10px;
-    font-size: 20px;
-    color: #fff;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Remember + Forgot */
-.options {
-    margin: 10px 0 20px 0;
-    display: flex;
-    justify-content: space-between;
+.input-box input {
+    width: 100%;
+    height: 100%;
+    padding-left: 40px;
+
+    background: rgba(255, 255, 255, 0.25); /* 🔥 casi transparente */
+    border: none;
+    border-radius: 8px;
+
     font-size: 14px;
     color: #fff;
+    font-weight: 500;
+
+    transition: 0.2s;
+}
+
+/* Al hacer click: más oscuro */
+.input-box input:focus {
+    background: rgba(0, 0, 0, 0.25); /* 🔥 destaca ligeramente */
+    outline: none;
+}
+
+/* Placeholder blanco suave */
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ===== OPCIONES ABAJO ===== */
+.options {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #f5f5f5;
 }
 
 .options a {
-    color: #fff;
     text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
 }
 
-.options label input {
-    accent-color: #fff;
-}
-
-/* Botón login */
+/* ===== BOTÓN LOGIN ===== */
 .btn-login {
+    margin-top: 25px;
     width: 100%;
-    padding: 12px;
-    background: #ffffffaa;
+    height: 42px;
+
     border: none;
     border-radius: 10px;
+    background: rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(6px);
+
+    color: #ffffff;
     font-size: 16px;
-    color: #333;
+    font-weight: bold;
+
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
+/* Hover del botón */
 .btn-login:hover {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.45);
 }
 
-/* Enlace registro */
+/* ===== LINK DE REGISTRO ===== */
 .register-link {
-    margin-top: 20px;
+    text-align: center;
     font-size: 14px;
+    margin-top: 20px;
     color: #fff;
 }
 
 .register-link a {
-    color: #fff;
-    text-decoration: underline;
-}
-
-/* Errores */
-.error {
-    color: #ff4444;
+    color: #ffffff;
     font-weight: bold;
-    margin-bottom: 10px;
+    text-decoration: none;
 }

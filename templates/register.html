@@ -13,34 +13,30 @@
 <div class="register-container">
 
     <div class="avatar">
-        <i class="icon-user">👤</i>
+        <span>&#128100;</span>
     </div>
 
     <h2>Create Account</h2>
 
     <form action="/register" method="POST">
 
-        {% if error %}
-        <p class="error">{{ error }}</p>
-        {% endif %}
-
         <div class="input-box">
-            <span class="icon">👤</span>
+            <span class="icon">&#128100;</span>
             <input type="text" name="username" placeholder="Username" required>
         </div>
 
         <div class="input-box">
-            <span class="icon">📧</span>
+            <span class="icon">&#9993;</span>
             <input type="email" name="email" placeholder="Email" required>
         </div>
 
         <div class="input-box">
-            <span class="icon">🔒</span>
+            <span class="icon">&#128274;</span>
             <input type="password" name="password" placeholder="Password" required>
         </div>
 
         <div class="input-box">
-            <span class="icon">🔒</span>
+            <span class="icon">&#128274;</span>
             <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         </div>
 
@@ -50,8 +46,8 @@
             Already have an account?
             <a href="/">Login</a>
         </p>
-    </form>
 
+    </form>
 </div>
 
 </body>

@@ -16,7 +16,7 @@ input, button {
     font-weight: bold;
 }
 .input-group {
-    width: 90%;
+    width: 260px;
     max-width: 320px;
     position: relative;
     margin: 10px auto;
@@ -48,9 +48,8 @@ input, button {
 }
 
 .login-container button {
-    width: 90%;
-    max-width: 320px;   /* Igual que los inputs */
-    height: 45px;
+    width: 260px;
+    height: 42px;
     margin: 20px auto 0 auto;
     display: block;
     border-radius: 10px;
@@ -71,3 +70,14 @@ input, button {
     text-decoration: underline;
 }
 
+.input-group input {
+    width: 100%;            /* ahora se limita al ancho del input-group */
+    height: 42px;           /* si cambias esto, el icono seguirá centrado */
+    padding-left: 40px;     /* espacio para el icono */
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    font-size: 15px;
+    outline: none;
+}
