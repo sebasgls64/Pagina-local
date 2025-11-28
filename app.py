@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, make_response
+from flask import session
 import json
 import os
 
@@ -35,6 +36,7 @@ def login():
         # Verificar credenciales
         for username, info in users.items():
             if (username == user_input or info["email"] == user_input) and info["password"] == password:
+                session["user"] = username
                 resp = make_response(redirect(url_for("home")))
 
                 if remember:
@@ -71,8 +73,17 @@ def register():
 # --- Pantalla principal después del login ---
 @app.route("/home")
 def home():
-    user = request.cookies.get("remember_user", "Invitado")
-    return render_template("home.html", user=user)
+    if "user" not in session:
+        
+        # Verificar cookie "remember"
+        remembered = request.cookies.get("remember_user")
+        
+        if remembered:
+            session["user"] = remembered  # restaurar sesión automáticamente
+        else:
+            return redirect(url_for("login"))
+
+    return render_template("home.html", user=session["user"])
 
 
 if __name__ == "__main__":
