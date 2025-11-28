@@ -1,0 +1,129 @@
+/* Fondo degradado suave */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor estilo glassmorphism */
+.login-container {
+    width: 350px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+/* Avatar redondo arriba */
+.avatar {
+    width: 80px;
+    height: 80px;
+    margin: -70px auto 10px auto;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.icon-user {
+    font-size: 40px;
+}
+
+/* Inputs con iconos */
+.input-box {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    color: #fff;
+    backdrop-filter: blur(6px);
+}
+
+.input-box .icon {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Remember + Forgot */
+.options {
+    margin: 10px 0 20px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #fff;
+}
+
+.options a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.options label input {
+    accent-color: #fff;
+}
+
+/* Botón login */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #ffffffaa;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #fff;
+}
+
+/* Enlace registro */
+.register-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.register-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Errores */
+.error {
+    color: #ff4444;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

@@ -58,16 +58,24 @@ def register():
         username = request.form["username"]
         email = request.form["email"]
         password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
 
+        # Validaciones
         if username in users:
             return render_template("register.html", error="El usuario ya existe")
 
+        if password != confirm_password:
+            return render_template("register.html", error="Las contraseñas no coinciden")
+
+        # Guardar usuario nuevo
         users[username] = {"email": email, "password": password}
+
         guardar_usuarios(users)
 
-        return redirect(url_for("login"))
+        return redirect("/")
 
     return render_template("register.html")
+
 
 
 # --- Pantalla principal después del login ---

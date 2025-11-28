@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Crear cuenta</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
-    <h2>Crear usuario</h2>
 
-    {% if error %}
-        <div class="error">{{ error }}</div>
-    {% endif %}
+<div class="background"></div>
 
-    <form method="POST">
-        <input type="text" name="username" placeholder="Nombre de usuario" required><br>
-        <input type="email" name="email" placeholder="Correo" required><br>
-        <input type="password" name="password" placeholder="Contraseña" required><br>
+<div class="register-container">
 
-        <button type="submit">Registrar</button>
+    <div class="avatar">
+        <i class="icon-user">👤</i>
+    </div>
+
+    <h2>Create Account</h2>
+
+    <form action="/register" method="POST">
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <div class="input-box">
+            <span class="icon">👤</span>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="input-box">
+            <span class="icon">📧</span>
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input-box">
+            <span class="icon">🔒</span>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="input-box">
+            <span class="icon">🔒</span>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+        </div>
+
+        <button type="submit" class="btn-register">REGISTER</button>
+
+        <p class="login-link">
+            Already have an account?
+            <a href="/">Login</a>
+        </p>
     </form>
 
-    <a href="/">Volver al login</a>
+</div>
+
 </body>
 </html>

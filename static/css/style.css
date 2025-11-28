@@ -15,3 +15,59 @@ input, button {
     color: red;
     font-weight: bold;
 }
+.input-group {
+    width: 90%;
+    max-width: 320px;
+    position: relative;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff;
+}
+
+.login-container input {
+    width: 90%;            /* Antes estaba al 100%, ahora queda dentro */
+    max-width: 320px;      /* Recorta aún más el largo */
+    height: 45px;
+    padding-left: 45px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    border: none;
+    color: black;
+    font-size: 16px;
+    margin: 0 auto;        /* Centra los inputs */
+    display: block;
+}
+
+.login-container button {
+    width: 90%;
+    max-width: 320px;   /* Igual que los inputs */
+    height: 45px;
+    margin: 20px auto 0 auto;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-footer {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.login-footer a {
+    color: #3a4fff;
+    text-decoration: underline;
+}
+

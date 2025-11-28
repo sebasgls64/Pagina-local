@@ -1,27 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
-    <h2>Iniciar sesión</h2>
 
-    {% if error %}
-        <div class="error">{{ error }}</div>
-    {% endif %}
+<div class="background"></div>
 
-    <form method="POST">
-        <input type="text" name="user" placeholder="Usuario o correo" required><br>
-        <input type="password" name="password" placeholder="Contraseña" required><br>
+<div class="login-container">
 
-        <label>
-            <input type="checkbox" name="remember"> Recordarme
-        </label><br>
+    <div class="avatar">
+        <i class="icon-user"></i>
+    </div>
 
-        <button type="submit">Entrar</button>
+    <h2>Welcome</h2>
+
+    <form action="/" method="POST">
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <div class="input-box">
+            <span class="icon">&#128100;</span>
+            <input type="text" name="user" placeholder="Email or Username" required>
+        </div>
+
+        <div class="input-box">
+            <span class="icon">&#128274;</span>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <div class="options">
+            <label>
+                <input type="checkbox" name="remember">
+                Remember me
+            </label>
+
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn-login">LOGIN</button>
+
+        <p class="register-link">
+            Don't have an account?
+            <a href="/register">Register</a>
+        </p>
+
     </form>
+</div>
 
-    <a href="/register">Crear usuario</a>
 </body>
 </html>
