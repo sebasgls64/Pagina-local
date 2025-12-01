@@ -81,17 +81,20 @@ def register():
 # --- Pantalla principal después del login ---
 @app.route("/home")
 def home():
-    if "user" not in session:
-        
-        # Verificar cookie "remember"
-        remembered = request.cookies.get("remember_user")
-        
-        if remembered:
-            session["user"] = remembered  # restaurar sesión automáticamente
-        else:
-            return redirect(url_for("login"))
+    return render_template("home.html")
 
-    return render_template("home.html", user=session["user"])
+@app.route("/edit_user")
+def edit_user():
+    return render_template("edit_user.html")
+
+@app.route("/calendar")
+def calendar():
+    return render_template("calendar.html")
+
+@app.route("/logout")
+def logout():
+    return redirect(url_for("login"))
+
 
 
 if __name__ == "__main__":

@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bienvenido</title>
-    <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-    <h2>Bienvenido, {{ user }}</h2>
-    <p>Has iniciado sesión correctamente.</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Inicio</h1>
+<p>Bienvenido a tu panel.</p>
+{% endblock %}
