@@ -95,6 +95,7 @@ body {
     margin-bottom: 20px;
 }
 
+/* ===== ESTILO GENERAL DE LAS CELDAS ===== */
 .menu a {
     display: flex;
     align-items: center;
@@ -104,11 +105,26 @@ body {
     text-decoration: none;
     color: white;
     backdrop-filter: blur(5px);
-    transition: .2s;
+    transition: background .2s, gap .2s;
 }
 
+/* ===== CELDA ACTIVA (permanente) ===== */
+.menu a.active {
+    background: rgba(0, 0, 0, 0.35); /* color oscuro permanente */
+}
+
+/* ===== HOVER DE CELDAS ===== */
 .menu a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.25); /* oscuro para las normales */
+}
+
+/* ===== EXCEPCIÓN: CERRAR SESIÓN ===== */
+.menu a.logout:hover {
+    background: rgba(255, 0, 0, 0.4); /* rojo translucido */
+}
+
+.menu a.logout.active {
+    background: rgba(200, 0, 0, 0.5); /* rojo permanente */
 }
 
 /* =========================================

@@ -17,11 +17,35 @@
         </div>
 
         <ul class="menu">
-            <li><a href="{{ url_for('home') }}"><i>🏠</i> <span>Inicio</span></a></li>
-            <li><a href="{{ url_for('edit_user') }}"><i>📝</i> <span>Editar usuario</span></a></li>
-            <li><a href="{{ url_for('calendar') }}"><i>📅</i> <span>Calendario</span></a></li>
-            <li><a href="{{ url_for('logout') }}"><i>🚪</i> <span>Cerrar sesión</span></a></li>
-        </ul>
+    <li>
+        <a href="{{ url_for('home') }}" 
+           class="{% if request.path == url_for('home') %}active{% endif %}">
+            <i>🏠</i> <span>Inicio</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ url_for('edit_user') }}" 
+           class="{% if request.path == url_for('edit_user') %}active{% endif %}">
+            <i>📝</i> <span>Editar usuario</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ url_for('calendar') }}" 
+           class="{% if request.path == url_for('calendar') %}active{% endif %}">
+            <i>📅</i> <span>Calendario</span>
+        </a>
+    </li>
+
+    <li>
+        <a href="{{ url_for('logout') }}" 
+           class="logout {% if request.path == url_for('logout') %}active{% endif %}">
+            <i>🚪</i> <span>Cerrar sesión</span>
+        </a>
+    </li>
+</ul>
+
 
     </aside>
 
